@@ -5,126 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tournament Bracket</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/bracket.css">
+    <link rel="stylesheet" href="./styles/bracket.css" />
   </head>
   <body>
     <!--Association-->
-    <div class="block">
-      <p>
-        L’Association Sport et Solidarité (ASS) a le plaisir d’annoncer
-        l’organisation d’un grand match de football amical qui se tiendra le
-        [date fictive] au stade [nom fictif]. Cet événement a pour objectif de
-        promouvoir l’esprit d’équipe, le sport et la solidarité au sein de notre
-        communauté. Deux équipes locales, composées de joueurs passionnés et
-        talentueux, s’affronteront dans une ambiance conviviale et festive. En
-        plus du match, des animations, de la musique et des rafraîchissements
-        seront proposés sur place pour permettre à tous de passer un moment
-        inoubliable. Les bénéfices récoltés serviront à financer [cause fictive,
-        ex : la rénovation d’un terrain de jeu pour les jeunes du quartier].
-        Nous invitons tous les habitants, amateurs de football ou non, à venir
-        nombreux pour soutenir cette belle initiative !
-      </p>
-    </div>
+    <header>
+      <div class="block animate-on-scroll">
+        <p>
+          L’Association Sport et Solidarité (ASS) a le plaisir d’annoncer
+          l’organisation d’un grand match de football amical qui se tiendra le
+          [date fictive] au stade [nom fictif]. Cet événement a pour objectif de
+          promouvoir l’esprit d’équipe, le sport et la solidarité au sein de
+          notre communauté. Deux équipes locales, composées de joueurs
+          passionnés et talentueux, s’affronteront dans une ambiance conviviale
+          et festive. En plus du match, des animations, de la musique et des
+          rafraîchissements seront proposés sur place pour permettre à tous de
+          passer un moment inoubliable. Les bénéfices récoltés serviront à
+          financer [cause fictive, ex : la rénovation d’un terrain de jeu pour
+          les jeunes du quartier]. Nous invitons tous les habitants, amateurs de
+          football ou non, à venir nombreux pour soutenir cette belle initiative
+          !
+        </p>
+      </div>
+    </header>
     <!--Equipe-->
-    <div class="block">
-      <p class="intro">
-        Pour cette rencontre exceptionnelle, nous aurons le plaisir d’accueillir
-        des équipes passionnées et déterminées, prêtes à offrir un spectacle de
-        qualité. Chaque formation apportera son style de jeu, son énergie et sa
-        volonté de décrocher la victoire. Voici les équipes qui seront de la
-        partie :
-      </p>
-      <div class="equipe-nom">
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 1</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 2</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 3</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 4</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 5</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 6</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 7</a>
-        </div>
-        <div>
-          <a href="#" target="_parent" rel="noopener noreferrer">Equipe 8</a>
+    <section>
+      <div class="block">
+        <p class="intro">
+          Pour cette rencontre exceptionnelle, nous aurons le plaisir
+          d’accueillir des équipes passionnées et déterminées, prêtes à offrir
+          un spectacle de qualité. Chaque formation apportera son style de jeu,
+          son énergie et sa volonté de décrocher la victoire. Voici les équipes
+          qui seront de la partie :
+        </p>
+        <div class="equipe-nom">
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 1</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 2</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 3</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 4</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 5</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 6</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 7</a>
+          </div>
+          <div>
+            <a href="#" target="_parent" rel="noopener noreferrer">Equipe 8</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <div class="tournaments-container" id="tournaments-container">
       <div class="loading">Chargement...</div>
     </div>
     <!--Retier le style quand la final sera arrive et controler le score (en dessous de chaque equipe ya son score)-->
-    <div class="final block">
-      <div>
-        <h3>Equipe 2</h3>
-        <h4>2</h4>
+    <section>
+      <div class="final block">
+        <div>
+          <h3>Equipe 2</h3>
+          <h4>2</h4>
+        </div>
+        <div>
+          <img src="./images/vs.png" alt="versus" />
+        </div>
+        <div>
+          <h3>Equipe 8</h3>
+          <h4>1</h4>
+        </div>
       </div>
-      <div>
-        <img src="./images/vs.png" alt="versus" />
-      </div>
-      <div>
-        <h3>Equipe 8</h3>
-        <h4>1</h4>
-      </div>
-    </div>
+    </section>
     <!--Sponsort-->
-    <div class="block">
-      <div class="texte">
-        <p>
-          Nous tenons à exprimer notre profonde gratitude envers nos sponsors,
-          dont le soutien a rendu cet événement possible. Grâce à leur
-          engagement, nous avons pu couvrir les frais d’organisation et offrir
-          une expérience mémorable à tous les participants. Leur contribution ne
-          se limite pas à un appui financier : elle démontre leur attachement au
-          développement du sport et à la cohésion sociale. Un grand merci à
-          [nom(s) fictif(s) de sponsors] pour leur confiance et leur générosité.
-          Ensemble, nous prouvons que le sport peut rassembler et inspirer.
-        </p>
-        <a href="">
-          <img src="./images/logo.jpg" alt="sponsors" />
-        </a>
-      </div>
-    </div>
-    <div class="block">
-      <h2>Association de footbal</h2>
-      <div class="reseau">
-        <div>
-          <a href="#">
-            Page Facebook
-            <img src="./images/facebook.svg" alt="" />
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            Nous appeller
-            <img src="./images/call.svg" alt="" />
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            Whatsaap
-            <img src="./images/whatsapp.svg" alt="" />
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            Mail
-            <img src="./images/mail.svg" alt="" />
+    <section>
+      <div class="block">
+        <div class="texte">
+          <p>
+            Nous tenons à exprimer notre profonde gratitude envers nos sponsors,
+            dont le soutien a rendu cet événement possible. Grâce à leur
+            engagement, nous avons pu couvrir les frais d’organisation et offrir
+            une expérience mémorable à tous les participants. Leur contribution
+            ne se limite pas à un appui financier : elle démontre leur
+            attachement au développement du sport et à la cohésion sociale. Un
+            grand merci à [nom(s) fictif(s) de sponsors] pour leur confiance et
+            leur générosité. Ensemble, nous prouvons que le sport peut
+            rassembler et inspirer.
+          </p>
+          <a href="">
+            <img src="./images/logo.jpg" alt="sponsors" />
           </a>
         </div>
       </div>
-    </div>
+    </section>
+    <!--contact-->
+    <footer>
+      <div class="block">
+        <h2>Association de footbal</h2>
+        <div class="reseau">
+          <div>
+            <a href="#">
+              Page Facebook
+              <img src="./images/facebook.svg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              Nous appeller
+              <img src="./images/call.svg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              Whatsaap
+              <img src="./images/whatsapp.svg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              Mail
+              <img src="./images/mail.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./scripts/script.js"></script>
 
     <script src="./scripts/data.js"></script>
