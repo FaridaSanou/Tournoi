@@ -1,0 +1,124 @@
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #03d9ce;
+    color: #1a1a2e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #02b8ae;
+    transform: translateY(-2px);
+}
+
+.team-header {
+    text-align: center;
+    border: 2px solid #03d9ce;
+}
+
+.team-header h1 {
+    font-size: 2.5em;
+    color: #03d9ce;
+    margin-bottom: 20px;
+}
+
+.coach-info {
+    background-color: #494971;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.coach-info h2 {
+    color: #03d9ce;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.coach-info p {
+    font-size: 1.2em;
+    color: #e3e8ef;
+    font-weight: bold;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.player-card {
+    background-color: #494971;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #5a5a8a;
+    transition: all 0.3s ease;
+}
+
+.player-card:hover {
+    border-color: #03d9ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 217, 206, 0.2);
+}
+
+.player-number {
+    background-color: #03d9ce;
+    color: #1a1a2e;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 10px;
+}
+
+.player-name {
+    color: #e3e8ef;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.team-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #03d9ce;
+    color: #1a1a2e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #02b8ae;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 217, 206, 0.3);
+}
+
+@media (max-width: 768px) {
+    .team-header h1 {
+        font-size: 2em;
+    }
+    
+    .players-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+    
+    .player-card {
+        padding: 12px;
+    }
+}

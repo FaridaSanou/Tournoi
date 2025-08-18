@@ -36,24 +36,38 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
-.equipe-nom div {
-  margin-top: 5px;
-  margin-bottom: 5px;
+
+.team-card {
   background-color: #494971;
-  padding: 10px;
+  padding: 15px;
   width: 80%;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
-.equipe-nom div a {
-  text-decoration: none;
-  color: blue;
+
+.team-card:hover {
+  background-color: #5a5a8a;
+  border-color: #03d9ce;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 217, 206, 0.3);
 }
-.equipe-nom div a:active {
-  text-decoration: none;
-  color: red;
-  text-decoration: underline;
+
+.team-card h3 {
+  color: #e3e8ef;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.team-card p {
+  color: #b0b8c5;
+  font-size: 0.9em;
+  margin: 0;
 }
 
 .final {

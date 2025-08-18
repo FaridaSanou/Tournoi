@@ -8,11 +8,31 @@ function initializeTournament() {
 
     TOURNAMENT_DATA = window.TOURNAMENT_CONFIG;
     console.log("✅ Configuration chargée:", TOURNAMENT_DATA);
+    generateTeamsSection();
     generateAllBrackets();
   } catch (error) {
     console.error("❌ Erreur lors de l'initialisation:", error);
     showError(error.message);
   }
+}
+
+function generateTeamsSection() {
+  const teamsContainer = document.querySelector('.equipe-nom');
+  if (!teamsContainer || !window.TEAMS_INFO) return;
+
+  let html = '';
+  
+  window.TEAMS_INFO.forEach(team => {
+    html += `
+      <div class="team-card" onclick="window.location.href='${team.link}'">
+        <h3>${team.name}</h3>
+        <p>Entraîneur: ${team.coach}</p>
+      </div>
+    `;
+  });
+
+  teamsContainer.innerHTML = html;
+  console.log('✅ Section équipes générée automatiquement');
 }
 
 function applyTheme(tournament) {
@@ -244,6 +264,67 @@ function generateAllBrackets() {
   document.head.appendChild(styleElement);
 
   container.innerHTML = html;
+  
+  // Mettre à jour la section finale automatiquement
+  updateFinalSection();
+}
+
+function updateFinalSection() {
+  const finalSection = document.querySelector('.final');
+  if (!finalSection) return;
+
+  // Chercher les gagnants de chaque poule
+  const winners = [];
+  
+  TOURNAMENT_DATA.forEach((tournament) => {
+    const structure = calculateBracketStructure(tournament);
+    const finalRoundIndex = structure.length - 1;
+    const finalMatchKey = `r${finalRoundIndex}_m0`;
+    const finalMatch = tournament.matches[finalMatchKey];
+    
+    if (finalMatch && finalMatch.score1 !== null && finalMatch.score2 !== null) {
+      const winner = getMatchWinner(finalMatch);
+      const winnerTeam = tournament.teams[winner];
+      const winnerScore = winner === finalMatch.team1 ? finalMatch.score1 : finalMatch.score2;
+      
+      if (winnerTeam) {
+        winners.push({
+          name: winnerTeam.name,
+          score: winnerScore,
+          poolName: tournament.name
+        });
+      }
+    }
+  });
+
+  // Si on a exactement 2 gagnants (finale possible)
+  if (winners.length === 2) {
+    // Déterminer le gagnant final (celui avec le meilleur score)
+    const team1 = winners[0];
+    const team2 = winners[1];
+    
+    finalSection.innerHTML = `
+      <div>
+        <h3>${team1.name}</h3>
+        <h4>${team1.score}</h4>
+      </div>
+      <div>
+        <img src="./images/vs.png" alt="versus" />
+      </div>
+      <div>
+        <h3>${team2.name}</h3>
+        <h4>${team2.score}</h4>
+      </div>
+    `;
+    
+    // Afficher la section finale
+    finalSection.style.display = 'flex';
+    console.log(`🏆 Finale mise à jour: ${team1.name} (${team1.score}) vs ${team2.name} (${team2.score})`);
+  } else {
+    // Masquer la section finale si pas encore prête
+    finalSection.style.display = 'none';
+    console.log(`⏳ Finale pas encore disponible (${winners.length}/2 gagnants)`);
+  }
 }
 
 function showError(message) {
