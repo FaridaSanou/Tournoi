@@ -8,7 +8,7 @@ function initializeTournament() {
 
     TOURNAMENT_DATA = window.TOURNAMENT_CONFIG;
     console.log("✅ Configuration chargée:", TOURNAMENT_DATA);
-    generateTeamsSection();
+    renderTeamsOverviewSection();
     generateAllBrackets();
   } catch (error) {
     console.error("❌ Erreur lors de l'initialisation:", error);
@@ -16,23 +16,38 @@ function initializeTournament() {
   }
 }
 
-function generateTeamsSection() {
-  const teamsContainer = document.querySelector('.equipe-nom');
-  if (!teamsContainer || !window.TEAMS_INFO) return;
+/**
+ * Génère automatiquement la section d'affichage des équipes
+ * Utilise les données des équipes pour créer des cartes cliquables
+ */
+function renderTeamsOverviewSection() {
+  const teamsDisplayContainer = document.querySelector('.equipe-nom');
+  if (!teamsDisplayContainer || !window.TEAMS_INFO) {
+    console.warn('⚠️ Impossible de générer la section équipes : conteneur ou données manquants');
+    return;
+  }
 
-  let html = '';
-  
-  window.TEAMS_INFO.forEach(team => {
-    html += `
-      <div class="team-card" onclick="window.location.href='${team.link}'">
-        <h3>${team.name}</h3>
-        <p>Entraîneur: ${team.coach}</p>
+  const teamsCardsHtml = window.TEAMS_INFO.map(teamInfo => {
+    return `
+      <div class="team-card" onclick="navigateToTeamPage('${teamInfo.link}')">
+        <h3>${teamInfo.name}</h3>
+        <p>Entraîneur: ${teamInfo.coach}</p>
       </div>
     `;
-  });
+  }).join('');
 
-  teamsContainer.innerHTML = html;
-  console.log('✅ Section équipes générée automatiquement');
+  teamsDisplayContainer.innerHTML = teamsCardsHtml;
+  console.log('✅ Section équipes générée avec succès');
+}
+
+/**
+ * Navigue vers la page d'une équipe spécifique
+ * @param {string} teamPageUrl - URL de la page de l'équipe
+ */
+function navigateToTeamPage(teamPageUrl) {
+  if (teamPageUrl) {
+    window.location.href = teamPageUrl;
+  }
 }
 
 function applyTheme(tournament) {
